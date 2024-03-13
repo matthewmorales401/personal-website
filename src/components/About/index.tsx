@@ -1,6 +1,4 @@
 import * as stylex from "@stylexjs/stylex";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import project_one from "../../../public/images/kisspng-golden-gate-bridge-landmark-bridge-5ac54865bc6c35.0123875815228785657718.png"
 
 
@@ -60,19 +58,9 @@ const styles = stylex.create({
   });
 
 
-  type ProjectSliceProps = {
-    src: string;
-    height: string;
-    width: string;
-
-    icon: IconDefinition;
-    href: string;
-  };
-
-
   
 
-export default function About({icon, href} : ProjectSliceProps) {
+export default function About() {
 
     let descriptionOne = "Hey there, I'm Matt! With a background in Computer Science from the University of California, Davis, I've delved into site reliability engineering and full-stack development at companies like Twitter and Uber." 
     let descriptionTwo = "Living in San Francisco, where creativity and tech meet, has been a dream. From building my first website to tackling coding challenges, my curiosity has only grown. I'm driven by excellence and a hunger for learning."
@@ -90,10 +78,6 @@ export default function About({icon, href} : ProjectSliceProps) {
                     <p> {descriptionTwo} </p>
                     <p> {descriptionThree} </p>
                     <p> {descriptionFour} </p>
-
-                    <a href= {href}>
-                        <FontAwesomeIcon icon={icon}/>
-                    </a>
                 </div>
             </div>
 
