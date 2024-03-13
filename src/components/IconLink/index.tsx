@@ -39,7 +39,7 @@ export default function IconLink({href, icon, color} : IconLinkProps) {
 
     return (
         <a  {...stylex.props(styles.navContainer)} href={href}>
-          <FontAwesomeIcon  icon={icon} size="3x" color={color}/>
+          <FontAwesomeIcon  icon={icon} size="2x" color={color}/>
         </a>
 
 

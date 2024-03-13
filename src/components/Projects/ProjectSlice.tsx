@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import AOS from "aos";
 
+import { useEffect } from "react";
 
 const styles = stylex.create({
     navContainer: {
@@ -19,11 +20,11 @@ const styles = stylex.create({
         // boxShadow: "2em 2em 18em white",
         justifyContent: "center",
         flexDirection: {
-          "@media (max-width: 1200px)": "column",
+          "@media (max-width: 800px)": "column",
         },
 
         gap: {
-          "@media (max-width: 1200px)": "90px",
+          "@media (max-width: 800px)": "90px",
         },
         
       },
@@ -40,6 +41,7 @@ const styles = stylex.create({
         padding: "1.5em",
         boxSizing: "border-box",
         margin: "0 auto",
+
       },
 
       tagContainer: {
@@ -50,12 +52,21 @@ const styles = stylex.create({
       
       imageContainer: {
         height: {
-          "@media (max-width: 600px)": "auto",
+          "@media (max-width: 800px)": "auto",
         },
 
         width: {
-          "@media (max-width: 600px)": "40%",
+          "@media (max-width: 800px)": "40%",
         },
+      },
+
+
+      
+      gitBox: {
+        // boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;",
+
+        // fontWeight: "lighter"
+
       },
 
 
@@ -78,18 +89,24 @@ const styles = stylex.create({
 export default function ProjectSlice({src, height, width, icon, href} : ProjectSliceProps) {
 
 
+    useEffect(() => {
+      AOS.init({
+        duration: 400,
+      });
+    }, []);
+
     return (
         <div {...stylex.props(styles.navContainer)}>
             <div>
-                <img {...stylex.props(styles.imageContainer)}  src= {src} height={height} width={width}></img>
+                <img  data-aos="fade-right" {...stylex.props(styles.imageContainer)}  src= {src} height={height} width={width}  data-aos-delay="200"  data-aos-easing="ease-in-sine"></img>
             </div>
             <div>
-                <div {...stylex.props(styles.boxContainer)}>
+                <div data-aos="fade-left" {...stylex.props(styles.boxContainer)}  data-aos-delay="200"  data-aos-easing="ease-in-sine">
                     <h3>Slice the Pie</h3>
                     <i {...stylex.props(styles.tagContainer)}>{["React", "Node.js", "HTML", "D3"].join(' ')}</i>
                     <p>This project was created to provide users with an interactive way to compare their guesses of UC Davis administration expenditures with the actual data. It's an engaging tool that utilizes React and D3 to visualize financial information through dynamic pie charts.</p>
-                    <a href= {href}>
-                        <FontAwesomeIcon icon={icon}/>
+                    <a {...stylex.props(styles.gitBox)} href= {href}>
+                        <FontAwesomeIcon icon={icon} color="black" size="2x"/>
                     </a>
                 </div>
             </div>

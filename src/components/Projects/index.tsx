@@ -1,14 +1,13 @@
 import * as stylex from "@stylexjs/stylex";
 import ProjectLeft from "./ProjectLeft";
 import ProjectRight from "./ProjectRight";
-import project_two from "../../../public/images/Screenshot 2024-02-21 232319-front.png";
+import project_two from "../../images/Screenshot 2024-02-21 232319-front.png";
 import project_one from "../../../public/images/Screenshot 2024-02-22 152617-portrait.png"
 import project_three from "../../../public/images/Screenshot 2024-02-22 092424.png";
 import ProjectSlice from "./ProjectSlice";
 import {
   faGithub
 } from "@fortawesome/free-brands-svg-icons"
-import AOS from 'aos';
 
 
 const styles = stylex.create({

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 // import { isCompositeComponentWithType } from "react-dom/test-utils";
 import AOS from "aos";
-
+import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const styles = stylex.create({
@@ -23,11 +23,11 @@ const styles = stylex.create({
         alignItems: "flex-start",
 
         flexDirection: {
-            "@media (max-width: 1200px)": "column",
+            "@media (max-width: 1500px)": "column",
         },
 
         gap: {
-            "@media (max-width: 1200px)": "2em",
+            "@media (max-width: 1500px)": "2em",
         },
     },
       
@@ -58,8 +58,15 @@ const styles = stylex.create({
 
     imageContainer: {
         boxShadow: "0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2)",
-        height: "auto",
-        width: "90%",
+        height: {
+            default: "700px",
+            "@media (max-width: 1500px)": "auto",
+          },
+  
+          width: {
+            default: "65%",
+            "@media (max-width: 1500px)": "60%",
+          },
     },
 
   });
@@ -90,15 +97,15 @@ export default function ProjectLeft({src, height, width, icon, href} : ProjectLe
     return (
         <div {...stylex.props(styles.navContainer)}>
             <div>
-                <img data-aos="fade-right" {...stylex.props(styles.imageContainer)} src= {src} height={height} width={width}></img>
+                <img data-aos="fade-right"  data-aos-delay="200"  data-aos-easing="ease-in-sine"  {...stylex.props(styles.imageContainer)} src= {src} height={height} width={width}></img>
             </div>
             <div {...stylex.props(styles.firstContainer)}>
-                <div {...stylex.props(styles.spacer)} data-aos="fade-left">  
+                <div {...stylex.props(styles.spacer)} data-aos="fade-left"  data-aos-delay="200"  data-aos-easing="ease-in-sine">  
                     <h3>Communities and Crimes (Front End)</h3>
-                    <i>{["oui", "non"].join(' ')}</i>
+                    <i>{["React", "Node.js", "HTML", "CSS", "Python"].join(' ')}</i>
                     <p>{description}</p>
                     <a href= {href}>
-                        <FontAwesomeIcon icon={icon}/>
+                        <FontAwesomeIcon icon={icon} size="2x"/>
                     </a>
                 </div>
             </div>

@@ -20,7 +20,7 @@ export default function Contact() {
 
     return (
         <footer {...stylex.props(styles.footerContainer)}>
-          <p>Matthew Morales ©{new Date().getFullYear()} {"\n"} This 100% custom website is open source. You can find the code on GitHub. </p>
+          <p>Matt Morales ©{new Date().getFullYear()} {"\n"} This 100% custom website is open source. You can find the code on GitHub. </p>
         </footer>
 
 

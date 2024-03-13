@@ -21,12 +21,12 @@ const styles = stylex.create({
         paddingTop: "4em",
         width: "100%",
         flexDirection: {
-          "@media (max-width: 1200px)": "column",
+          "@media (max-width: 800px)": "column",
         },
 
         
         gap: {
-          "@media (max-width: 1200px)": "90px",
+          "@media (max-width: 800px)": "90px",
         },
       },
 
@@ -74,10 +74,10 @@ const styles = stylex.create({
 
 export default function About({icon, href} : ProjectSliceProps) {
 
-    let descriptionOne = "Hey there, I'm Matthew! A Bay Area local with a lifelong fascination for all things tech. From tinkering with gadgets as a kid to earning my degree in Computer Science at the University of California, Davis, my passion for technology has been a constant in my life. I've had the incredible opportunity to immerse myself in site reliability engineering and full-stack development, gaining valuable experience at influential companies like Twitter and Uber." 
-    let descriptionTwo = "Growing up in the innovation hub of San Francisco has been a dream come true. It's a place where creativity and technology merge seamlessly. Whether it was building my first website or diving into coding challenges, my curiosity for the field has only deepened over the years."
-    let descriptionThree = "These formative experiences have not only honed my technical skills but have also instilled in me a drive for excellence and a thirst for continuous learning. As a recent graduate, I'm excited to leverage my background in tech to contribute to impactful projects. Whether it's optimizing systems for reliability or creating intuitive user experiences, I'm eager for the opportunities that await in my journey as a tech professional."
-
+    let descriptionOne = "Hey there, I'm Matt! With a background in Computer Science from the University of California, Davis, I've delved into site reliability engineering and full-stack development at companies like Twitter and Uber." 
+    let descriptionTwo = "Living in San Francisco, where creativity and tech meet, has been a dream. From building my first website to tackling coding challenges, my curiosity has only grown. I'm driven by excellence and a hunger for learning."
+    let descriptionThree = "As a recent graduate, I'm excited to contribute to impactful projects. Check out my Resume, GitHub, and LinkedIn on the top right for more information about me!"
+    let descriptionFour = "Feel free to contact me if you  have any questions or want to learn more about me directly through my email, which you can also find on the top right!"
     return (
         <div {...stylex.props(styles.navContainer)} id="about">
             <div>
@@ -89,6 +89,7 @@ export default function About({icon, href} : ProjectSliceProps) {
                     <p> {descriptionOne} </p>
                     <p> {descriptionTwo} </p>
                     <p> {descriptionThree} </p>
+                    <p> {descriptionFour} </p>
 
                     <a href= {href}>
                         <FontAwesomeIcon icon={icon}/>
