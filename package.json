@@ -1,7 +1,7 @@
 {
   "homepage": "https://matthewmorales401.github.io/personal-website",
   "name": "personal-website",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
