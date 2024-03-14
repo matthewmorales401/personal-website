@@ -14,7 +14,10 @@ const styles = stylex.create({
     navContainer: {
         display: "flex",
         justifyContent: "space-between",
-        position: "sticky",
+        position: {
+          default: "sticky",
+          "@media (max-width: 800px)": "static",
+        },
         top: "0",
         backgroundColor: "white",
         boxShadow: "0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2)",
@@ -101,7 +104,7 @@ export default function Navbar() {
                 <div {...styledNavLinkStyles}>
                   <TextLink  href="#top" title= "About"/>
                   <TextLink   href="#projects" title= "Projects"/>
-                  <TextLink   href="../../public/Morales_Matthew_Resume2022 (2).pdf" title= "Resume"/>
+                  <TextLink   href="https://matthewmorales401.github.io/personal-website/matthew_morales_resume.pdf" title= "Resume"/>
                   <ButtonLink href="https://github.com/matthewmorales401" icon= {faGithub} color="black"/>
                   <ButtonLink href="https://www.linkedin.com/in/matt-morales-6a7914173/" icon= {faLinkedin} color="#0077b5"/>
                   <ButtonLink href="mailto:matthewmoralestech@gmail.com" icon= {faEnvelope} color="black"/>

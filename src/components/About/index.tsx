@@ -5,16 +5,6 @@ import project_one from "../../../public/images/kisspng-golden-gate-bridge-landm
 const styles = stylex.create({
     aboutContainer: {
         display: "flex",
-        // height: "300px",
-        // width: "2500px",
-        // flexFlow: "row",
-        // flexWrap: {
-          // default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         justifyContent: "center",
         paddingTop: "4em",
         width: "100%",
