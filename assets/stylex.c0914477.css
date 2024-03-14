@@ -11,8 +11,8 @@
 .x883omv{gap:10px}
 .xb3r6kr{overflow:hidden}
 @media (max-width: 1500px){.x1oyqj9r.x1oyqj9r{gap:2em}}
-@media (max-width: 800px){.x14502nl.x14502nl{gap:90px}}
 @media (max-width: 1200px){.x1rrv6lm.x1rrv6lm{gap:90px}}
+@media (max-width: 800px){.x14502nl.x14502nl{gap:90px}}
 }
 @layer priority3{
 .x6s0dn4{align-items:center}
@@ -43,8 +43,8 @@ html[dir='rtl'] .xfcwbpm{box-shadow:0 5px 10px rgba(154,160,185,.05), 0 15px 40p
 @media (max-width: 800px){.x1ivurkz.x1ivurkz{display:flex}}
 @media (max-width: 800px){.xze2x15.xze2x15{display:none}}
 @media (max-width: 800px){.x17ads12.x17ads12{flex-direction:column-reverse}}
-@media (max-width: 800px){.x1ruhwu5.x1ruhwu5{flex-direction:column}}
 @media (max-width: 1200px){.xf7htcu.xf7htcu{flex-direction:column}}
+@media (max-width: 800px){.x1ruhwu5.x1ruhwu5{flex-direction:column}}
 @media (max-width: 1500px){.x8jlg83.x8jlg83{flex-direction:column}}
 @media (min-width: 800px){.xmvizom.xmvizom{flex-direction:row}}
 @media (max-width: 1200px){.xf8sh6r.xf8sh6r{font-size:0}}
