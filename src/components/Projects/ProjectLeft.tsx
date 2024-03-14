@@ -21,6 +21,7 @@ const styles = stylex.create({
         // boxShadow: "2em 2em 18em white",
         justifyContent: "space-between",
         alignItems: "flex-start",
+        width: "100%",
 
         flexDirection: {
             "@media (max-width: 1500px)": "column",

@@ -25,10 +25,14 @@ const styles = stylex.create({
           ':hover': "#B2B2B2",
         },
         // width: "100$"
+        width: "100%",
+
       },
       linkContainer: {
         height: "100%",
         alignItems: "center",
+        width: "100%",
+
 
       },
 
