@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
-import ProjectLeft from "./ProjectLeft";
-import ProjectRight from "./ProjectRight";
+import ProjectML from "./ProjectML";
+import ProjectFitness from "./ProjectFitness";
 import project_two from "../../images/Screenshot 2024-02-21 232319-front.png";
 import project_one from "../../../public/images/Screenshot 2024-02-22 152617-portrait.png"
 import project_three from "../../../public/images/Screenshot 2024-02-22 092424.png";
@@ -13,16 +13,7 @@ import {
 const styles = stylex.create({
     navContainer: {
         display: "flex",
-        // height: "300px",
         width: "300px",
-        // flexFlow: "row",
-        // flexWrap: {
-        //   default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",s
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         backgroundColor: "#rgba(255, 255, 255, 0.87)",
         alignItems: "center",
       
@@ -31,7 +22,6 @@ const styles = stylex.create({
         marginBottom: "190px",
         fontWeight: "lighter",
         fontSize: "3.2em",
-        // lineHeight: "1.1",
       },
 
       wholeContainer: {
@@ -52,8 +42,8 @@ export default function Projects() {
             <h1 {...stylex.props(styles.header)}>Projects</h1>
           </div>
           <ProjectSlice {...stylex.props(styles.navContainer)} src = {project_one}  height="600px" width="300px" icon={faGithub} href="https://github.com/matthewmorales401/Slice-the-Pie"></ProjectSlice>
-          <ProjectRight {...stylex.props(styles.navContainer)} src = {project_two}  height="1000px" width="1000px"  icon={faGithub} href="https://github.com/matthewmorales401/fitness-log"></ProjectRight>
-          <ProjectLeft src={project_three} description = "Cooler!" height="600px" width="700px" icon={faGithub} href="https://github.com/vedantapte/ECS-171-Group-Project"></ProjectLeft>
+          <ProjectFitness {...stylex.props(styles.navContainer)} src = {project_two}  height="1000px" width="1000px"  icon={faGithub} href="https://github.com/matthewmorales401/fitness-log"></ProjectFitness>
+          <ProjectML src={project_three} description = "Cooler!" height="600px" width="700px" icon={faGithub} href="https://github.com/vedantapte/ECS-171-Group-Project"></ProjectML>
         </div>
 
 

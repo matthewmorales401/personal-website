@@ -6,21 +6,10 @@ import AOS from "aos";
 
 
 const styles = stylex.create({
-    navContainer: {
+  projectContainer: {
         display: "flex",
-        // height: "300px",
-        // width: "2500px",
-        // flexFlow: "row",
-        // flexWrap: {
-        //   default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         justifyContent: "space-between",
         alignItems: "center",
-        // paddingRight: "10em",
 
         flexDirection: {
           "@media (max-width: 800px)": "column-reverse",
@@ -43,12 +32,8 @@ const styles = stylex.create({
       },
 
       firstContainer: {
-        // height: "300px",
         display: "flex",
-        // alignItems: "center",
         justifyContent: "center",
-        // height: "1500px",
-        // margin: "0 auto",
 
       },
 
@@ -86,7 +71,7 @@ export default function ProjectFitness({src, height, width, icon, href} : Projec
 
 
     return (
-        <div {...stylex.props(styles.navContainer)}>
+        <div {...stylex.props(styles.projectContainer)}>
             <div {...stylex.props(styles.firstContainer)}>
                 <div {...stylex.props(styles.boxContainer)} data-aos="fade-right"  data-aos-delay="200"  data-aos-easing="ease-in-sine">
                     <h3>Fitness Log</h3>

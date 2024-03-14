@@ -1,18 +1,8 @@
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-    navContainer: {
+    textLinkContainer: {
         display: "flex",
-        // height: "300px",
-        // width: "2500px",
-        // flexFlow: "row",
-        // flexWrap: {
-        //   default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         backgroundColor: {
           ':hover': "#B2B2B2",
         },
@@ -24,16 +14,6 @@ const styles = stylex.create({
         fontWeight: "500", 
       },
 
-      textLinkContainer: {
-        height: "100%",
-        backgroundColor: {
-          ':hover': "#B2B2B2",
-        },
-      },
-
-      
-
-
   });
 
 
@@ -44,11 +24,11 @@ const styles = stylex.create({
 
   
 
-export default function ButtonLink({href, title} : TextLinkProps) {
+export default function TextLink({href, title} : TextLinkProps) {
 
 
     return (
-          <a {...stylex.props(styles.navContainer)} href={href}>{title}</a>
+          <a {...stylex.props(styles.textLinkContainer)} href={href}>{title}</a>
 
 
     );

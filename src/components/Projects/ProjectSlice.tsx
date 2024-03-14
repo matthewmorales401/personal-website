@@ -6,18 +6,8 @@ import AOS from "aos";
 import { useEffect } from "react";
 
 const styles = stylex.create({
-    navContainer: {
+    projectContainer: {
         display: "flex",
-        // height: "300px",
-        // width: "2500px",
-        // flexFlow: "row",
-        // flexWrap: {
-        //   default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         justifyContent: "center",
         flexDirection: {
           "@media (max-width: 800px)": "column",
@@ -89,7 +79,7 @@ export default function ProjectSlice({src, height, width, icon, href} : ProjectS
     }, []);
 
     return (
-        <div {...stylex.props(styles.navContainer)}>
+        <div {...stylex.props(styles.projectContainer)}>
             <div {...stylex.props(styles.imageBox)}>
                 <img  data-aos="fade-right" {...stylex.props(styles.imageContainer)}  src= {src} height={height} width={width}  data-aos-delay="200"  data-aos-easing="ease-in-sine"></img>
             </div>

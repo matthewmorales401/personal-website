@@ -10,15 +10,6 @@ const styles = stylex.create({
     navContainer: {
         display: "flex",
         height: "300px",
-        // width: "2500px",
-        // flexFlow: "row",
-        // flexWrap: {
-        //   default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         justifyContent: "space-evenly",
         alignItems: "center",
 
@@ -34,10 +25,7 @@ const styles = stylex.create({
           "@media (max-width: 1200px)": "5em",
         },
 
-
-
       },
-
 
       expContainer: {
         paddingBottom: {
@@ -48,13 +36,6 @@ const styles = stylex.create({
       }
 
   });
-
-
-  // type CompanyLinkProps = {
-
-  //   href: string;
-  // };
-
 
   
 

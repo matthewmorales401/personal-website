@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const styles = stylex.create({
-    navContainer: {
+    companyContainer: {
         display: "flex",
         padding: "0",
         justifyContent: "center",
@@ -54,7 +54,7 @@ export default function CompanyLink({href, icon, role, color} : ProjectLeftProps
             <div>
               <h2 {...stylex.props(styles.role)}>{role}</h2>
             </div>
-            <a  {...stylex.props(styles.navContainer)} href={href}>
+            <a  {...stylex.props(styles.companyContainer)} href={href}>
                 <FontAwesomeIcon icon={icon} size="3x" color={color}/>
             </a>
 

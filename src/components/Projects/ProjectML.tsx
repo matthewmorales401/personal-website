@@ -1,24 +1,13 @@
 import * as stylex from "@stylexjs/stylex";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-// import { isCompositeComponentWithType } from "react-dom/test-utils";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const styles = stylex.create({
-    navContainer: {
+    projectContainer: {
         display: "flex",
-        // height: "300px",
-        // width: "2500px",
-        // flexFlow: "row",
-        // flexWrap: {
-        //   default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         justifyContent: "space-between",
         alignItems: "flex-start",
         width: "100%",
@@ -39,7 +28,6 @@ const styles = stylex.create({
 
     },
     spacer: {
-        // justifyContent: "flex-start",
         backgroundColor: "white",
         width: "75%",
         padding: "1em",
@@ -48,12 +36,9 @@ const styles = stylex.create({
     },
 
     firstContainer: {
-        // height: "300px",
         display: "flex",
-        // alignItems: "center",
         justifyContent: "center",
-        // height: "1500px",
-        // margin: "0 auto",
+
 
       },
 
@@ -77,7 +62,7 @@ const styles = stylex.create({
   });
 
 
-  type ProjectLeftProps = {
+  type ProjectMLProps = {
     src: string;
     description: string;
     height: string;
@@ -90,7 +75,7 @@ const styles = stylex.create({
 
   
 
-export default function ProjectLeft({src, height, width, icon, href} : ProjectLeftProps) {
+export default function ProjectML({src, height, width, icon, href} : ProjectMLProps) {
     useEffect(() => {
         AOS.init({
           duration: 400,
@@ -100,7 +85,7 @@ export default function ProjectLeft({src, height, width, icon, href} : ProjectLe
     let description = "A project that predicts the amount of Violent Crimes per 100K given various different input classes (family, wealth, race).\
     It consists of a linear regression ML algorithm, a web application allowing for user interaction, a research paper summarizing our findings, and a demonstrative PowerPoint Presentation."
     return (
-        <div {...stylex.props(styles.navContainer)}>
+        <div {...stylex.props(styles.projectContainer)}>
             <div {...stylex.props(styles.imageBox)}>
                 <img data-aos="fade-right"  data-aos-delay="200"  data-aos-easing="ease-in-sine"  {...stylex.props(styles.imageContainer)} src= {src} height={height} width={width}></img>
             </div>
