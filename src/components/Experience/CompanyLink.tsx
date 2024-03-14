@@ -8,26 +8,23 @@ const styles = stylex.create({
     navContainer: {
         display: "flex",
         padding: "0",
-        // height: "300px",
-        // width: "2500px",
-        // flexFlow: "row",
-        // flexWrap: {
-        //   default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         justifyContent: "center",
         alignItems: "center",
         height: "100%",
         backgroundColor: {
           ':hover': "#B2B2B2",
         },
-        // width: "100$"
         width: "100%",
 
       },
+
+      role: {
+        fontSize: {
+          "@media (max-width: 800px)": "20px",
+        }
+      },
+
+
       linkContainer: {
         height: "100%",
         alignItems: "center",
@@ -36,16 +33,6 @@ const styles = stylex.create({
 
       },
 
-    //   spacer: {
-    //     // justifyContent: "flex-start",
-    //     backgroundColor: "white",
-    //     width: "90%",
-    //     padding: "1em",
-    //     boxShadow: "0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2)",
-
-
-
-    // },
   });
 
 
@@ -65,7 +52,7 @@ export default function CompanyLink({href, icon, role, color} : ProjectLeftProps
     return (
           <div {...stylex.props(styles.linkContainer)} >
             <div>
-              <h2>{role}</h2>
+              <h2 {...stylex.props(styles.role)}>{role}</h2>
             </div>
             <a  {...stylex.props(styles.navContainer)} href={href}>
                 <FontAwesomeIcon icon={icon} size="3x" color={color}/>
