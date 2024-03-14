@@ -30,6 +30,8 @@ const styles = stylex.create({
       header: {
         marginBottom: "190px",
         fontWeight: "lighter",
+        fontSize: "3.2em",
+        // lineHeight: "1.1",
       },
 
       wholeContainer: {
