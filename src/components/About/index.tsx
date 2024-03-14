@@ -3,7 +3,7 @@ import project_one from "../../../public/images/kisspng-golden-gate-bridge-landm
 
 
 const styles = stylex.create({
-    navContainer: {
+    aboutContainer: {
         display: "flex",
         // height: "300px",
         // width: "2500px",
@@ -67,7 +67,7 @@ export default function About() {
     let descriptionThree = "As a recent graduate, I'm excited to contribute to impactful projects. Check out my Resume, GitHub, and LinkedIn on the top right for more information about me!"
     let descriptionFour = "Feel free to contact me if you  have any questions or want to learn more about me directly through my email, which you can also find on the top right!"
     return (
-        <div {...stylex.props(styles.navContainer)} id="about">
+        <div {...stylex.props(styles.aboutContainer)} id="about">
             <div>
                 <img {...stylex.props(styles.imageContainer)} src= {project_one} height= "500px" width= "1200px"></img>
             </div>

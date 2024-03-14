@@ -60,7 +60,7 @@ const styles = stylex.create({
           "@media (max-width: 800px)": "12.5px",
         },
       },
-      header: {
+      navHeader: {
         lineHeight: "0",
         paddingLeft: "0.2em",
         
@@ -123,7 +123,7 @@ export default function Navbar() {
 
     return (
         <nav {...stylex.props(styles.navContainer)}>
-            <h1 {...stylex.props(styles.header)}>Matt Morales</h1>
+            <h1 {...stylex.props(styles.navHeader)}>Matt Morales</h1>
             <nav {...stylex.props(styles.linkContainer)}>
                 <div {...stylex.props(styles.menu)} onClick={handleClick}>
                   <FontAwesomeIcon icon={faBars} size="3x" />
