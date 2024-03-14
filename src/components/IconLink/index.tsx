@@ -21,6 +21,9 @@ const styles = stylex.create({
         // justifyContent: "flex-end",
         justifyContent: "center",
         alignItems: "center",
+        textDecoration: "inherit",
+        padding: "2em",
+        fontWeight: "500", 
       },
 
   });

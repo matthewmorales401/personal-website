@@ -19,6 +19,9 @@ const styles = stylex.create({
         color: "#797270",
         justifyContent: "center",
         alignItems: "center",
+        textDecoration: "inherit",
+        padding: "2em",
+        fontWeight: "500", 
       },
 
       textLinkContainer: {
@@ -27,6 +30,8 @@ const styles = stylex.create({
           ':hover': "#B2B2B2",
         },
       },
+
+      
 
 
   });
