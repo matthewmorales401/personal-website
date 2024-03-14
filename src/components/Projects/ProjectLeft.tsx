@@ -44,7 +44,7 @@ const styles = stylex.create({
         width: "75%",
         padding: "1em",
         boxShadow: "0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2)",
-
+        
     },
 
     firstContainer: {
@@ -69,6 +69,10 @@ const styles = stylex.create({
             "@media (max-width: 1500px)": "60%",
           },
     },
+
+    imageBox: {
+        width: "100%",
+      }
 
   });
 
@@ -97,7 +101,7 @@ export default function ProjectLeft({src, height, width, icon, href} : ProjectLe
     It consists of a linear regression ML algorithm, a web application allowing for user interaction, a research paper summarizing our findings, and a demonstrative PowerPoint Presentation."
     return (
         <div {...stylex.props(styles.navContainer)}>
-            <div>
+            <div {...stylex.props(styles.imageBox)}>
                 <img data-aos="fade-right"  data-aos-delay="200"  data-aos-easing="ease-in-sine"  {...stylex.props(styles.imageContainer)} src= {src} height={height} width={width}></img>
             </div>
             <div {...stylex.props(styles.firstContainer)}>
@@ -106,7 +110,7 @@ export default function ProjectLeft({src, height, width, icon, href} : ProjectLe
                     <i>{["React", "Node.js", "HTML", "CSS", "Python"].join(' ')}</i>
                     <p>{description}</p>
                     <a href= {href}>
-                        <FontAwesomeIcon icon={icon} size="2x"/>
+                        <FontAwesomeIcon icon={icon} size="2x" color="black"/>
                     </a>
                 </div>
             </div>

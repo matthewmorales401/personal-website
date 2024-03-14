@@ -60,16 +60,9 @@ const styles = stylex.create({
         },
       },
 
-
-      
-      gitBox: {
-        // boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;",
-
-        // fontWeight: "lighter"
-
-      },
-
-
+      imageBox: {
+        width: "100%",
+      }
 
   });
 
@@ -97,7 +90,7 @@ export default function ProjectSlice({src, height, width, icon, href} : ProjectS
 
     return (
         <div {...stylex.props(styles.navContainer)}>
-            <div>
+            <div {...stylex.props(styles.imageBox)}>
                 <img  data-aos="fade-right" {...stylex.props(styles.imageContainer)}  src= {src} height={height} width={width}  data-aos-delay="200"  data-aos-easing="ease-in-sine"></img>
             </div>
             <div>
@@ -105,7 +98,7 @@ export default function ProjectSlice({src, height, width, icon, href} : ProjectS
                     <h3>Slice the Pie</h3>
                     <i {...stylex.props(styles.tagContainer)}>{["React", "Node.js", "HTML", "D3"].join(' ')}</i>
                     <p>This project was created to provide users with an interactive way to compare their guesses of UC Davis administration expenditures with the actual data. It's an engaging tool that utilizes React and D3 to visualize financial information through dynamic pie charts.</p>
-                    <a {...stylex.props(styles.gitBox)} href= {href}>
+                    <a href= {href}>
                         <FontAwesomeIcon icon={icon} color="black" size="2x"/>
                     </a>
                 </div>

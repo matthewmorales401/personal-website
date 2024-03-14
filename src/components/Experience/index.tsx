@@ -43,6 +43,8 @@ const styles = stylex.create({
         paddingBottom: {
           "@media (max-width: 1200px)": "1em",
         },
+        fontSize: "3.2em",
+        fontWeight: "lighter",
       }
 
   });
