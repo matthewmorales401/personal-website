@@ -37,7 +37,7 @@ const styles = stylex.create({
       navHeader: {
         lineHeight: "0",
         paddingLeft: "0.2em",
-        
+        fontWeight: "lighter",
         fontSize: {
           default: "50px",
           "@media (max-width: 1200px)": "0px",
