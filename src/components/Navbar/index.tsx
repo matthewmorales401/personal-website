@@ -13,18 +13,7 @@ import { useState } from "react";
 const styles = stylex.create({
     navContainer: {
         display: "flex",
-        // height: "300px",
-        // width: "2500px",
-        // flexFlow: "row",
-        // flexWrap: {
-        //   default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         justifyContent: "space-between",
-        // gap: "10px",
         position: "sticky",
         top: "0",
         backgroundColor: "white",
@@ -38,23 +27,8 @@ const styles = stylex.create({
       },
       linkContainer: {
         display: "flex",
-        // height: "300px",
-        // width: "2500px",
-        // flexFlow: "row",
-        // flexWrap: {
-        //   default: "nowrap",
-        //   "@media (max-width: 576px)": "wrap",
-        // },
-        // justifyContent: "flex-start",
-        // alignItems: "center",
-        // boxShadow: "2em 2em 18em white",
         justifyContent: "flex-end",
         gap: "10px",
-        // padding: "2em",
-        // flexDirection: "column", remember this too
-        // height: {
-        //   "@media (max-width: 1200px)": "50px",
-        // },
         flexShrink: "1",
         fontSize: {
           "@media (max-width: 800px)": "12.5px",
@@ -82,11 +56,7 @@ const styles = stylex.create({
         backgroundColor: "white",
         alignItems: "center",
         justifyContent: "center",
-        // paddingTop: "0.5em", remember this
         overflow: "hidden",
-      },
-      test: {
-        // display: "none",
       },
 
       menuCollapsed: {
