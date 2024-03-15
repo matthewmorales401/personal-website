@@ -1,9 +1,9 @@
 import * as stylex from "@stylexjs/stylex";
 import ProjectML from "./ProjectML";
 import ProjectFitness from "./ProjectFitness";
-import project_two from "../../images/Screenshot 2024-02-21 232319-front.png";
-import project_one from "../../../public/images/Screenshot 2024-02-22 152617-portrait.png";
-import project_three from "../../../public/images/Screenshot 2024-02-22 092424.png";
+import project_two from "../../images/fitness-log.png";
+import project_one from "../../images/slice-the-pie.png";
+import project_three from "../../images/machine-learning-project.png";
 import ProjectSlice from "./ProjectSlice";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 

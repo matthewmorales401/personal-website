@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import project_one from "../../../public/images/kisspng-golden-gate-bridge-landmark-bridge-5ac54865bc6c35.0123875815228785657718.png";
+import project_one from "../../images/golden-gate-bridge.png";
 
 const styles = stylex.create({
   aboutContainer: {
