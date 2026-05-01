@@ -1,122 +1,177 @@
 import * as stylex from "@stylexjs/stylex";
 import TextLink from "../TextLink";
-import ButtonLink from "../IconLink";
+import IconLink from "../IconLink";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const styles = stylex.create({
-  navContainer: {
+  nav: {
+    position: "sticky",
+    top: 0,
+    zIndex: 10,
+    backgroundColor: "rgba(251, 250, 247, 0.85)",
+    backdropFilter: "saturate(160%) blur(12px)",
+    WebkitBackdropFilter: "saturate(160%) blur(12px)",
+    borderBottom: "1px solid var(--color-border)",
+  },
+  inner: {
+    maxWidth: "var(--max-width)",
+    margin: "0 auto",
+    paddingLeft: "var(--space-page)",
+    paddingRight: "var(--space-page)",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
     display: "flex",
-    justifyContent: "space-between",
-    position: {
-      default: "sticky",
-      "@media (max-width: 800px)": "static",
-    },
-    top: "0",
-    backgroundColor: "white",
-    boxShadow:
-      "0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2)",
-    height: "auto",
-    maxHeight: {
-      default: "100px",
-      "@media (max-width: 800px)": "700px",
-    },
-    zIndex: "1",
-  },
-  linkContainer: {
-    display: "flex",
-    justifyContent: "flex-end",
-    gap: "10px",
-    flexShrink: "1",
-    fontSize: {
-      "@media (max-width: 800px)": "12.5px",
-    },
-  },
-  navHeader: {
-    lineHeight: "0",
-    paddingLeft: "0.2em",
-    fontWeight: "lighter",
-    fontSize: {
-      default: "50px",
-      "@media (max-width: 1200px)": "0px",
-      "@media (max-width: 800px)": "30px",
-    },
-    justifyContent: "center",
-  },
-
-  menu: {
-    display: {
-      default: "none",
-      "@media (max-width: 800px)": "flex",
-    },
-    backgroundColor: "white",
     alignItems: "center",
-    justifyContent: "center",
-    overflow: "hidden",
+    justifyContent: "space-between",
+    gap: "1rem",
   },
-
-  menuCollapsed: {
+  brand: {
+    fontSize: "1.05rem",
+    fontWeight: 600,
+    letterSpacing: "-0.01em",
+    color: "var(--color-text)",
+  },
+  desktopLinks: {
     display: {
       default: "flex",
-      "@media (max-width: 800px)": "none",
+      "@media (max-width: 700px)": "none",
     },
+    alignItems: "center",
+    gap: "1.5rem",
   },
-
-  menuNotCollapsed: {
+  iconRow: {
     display: "flex",
-    flexDirection: {
-      default: "column",
-      "@media (min-width: 800px)": "row",
+    alignItems: "center",
+    gap: "0.75rem",
+    paddingLeft: "0.75rem",
+    borderLeft: "1px solid var(--color-border)",
+  },
+  hamburger: {
+    display: {
+      default: "none",
+      "@media (max-width: 700px)": "inline-flex",
     },
+    background: "transparent",
+    border: "none",
+    padding: "0.5rem",
+    cursor: "pointer",
+    color: "var(--color-text)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  mobilePanel: {
+    display: {
+      default: "none",
+      "@media (max-width: 700px)": "flex",
+    },
+    flexDirection: "column",
+    gap: "1rem",
+    paddingTop: "1rem",
+    paddingBottom: "1.5rem",
+    paddingLeft: "var(--space-page)",
+    paddingRight: "var(--space-page)",
+    borderTop: "1px solid var(--color-border)",
+    backgroundColor: "var(--color-surface)",
+  },
+  mobileIcons: {
+    display: "flex",
+    gap: "1rem",
+    paddingTop: "0.75rem",
+    borderTop: "1px solid var(--color-border)",
   },
 });
 
 export default function Navbar() {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-
-  const handleClick = () => {
-    setIsCollapsed((prevState) => !prevState);
-  };
-
-  const styledNavLinkStyles = stylex.props(
-    styles.menu,
-    isCollapsed ? styles.menuCollapsed : styles.menuNotCollapsed,
-  );
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav {...stylex.props(styles.navContainer)}>
-      <h1 {...stylex.props(styles.navHeader)}>Matt Morales</h1>
-      <nav {...stylex.props(styles.linkContainer)}>
-        <div {...stylex.props(styles.menu)} onClick={handleClick}>
-          <FontAwesomeIcon icon={faBars} size="3x" />
-        </div>
-        <div {...styledNavLinkStyles}>
-          <TextLink href="#top" title="About" />
+    <nav {...stylex.props(styles.nav)} aria-label="Primary">
+      <div {...stylex.props(styles.inner)}>
+        <a
+          href="#about"
+          {...stylex.props(styles.brand)}
+          aria-label="Matt Morales — home"
+        >
+          Matt Morales
+        </a>
+
+        <div {...stylex.props(styles.desktopLinks)}>
+          <TextLink href="#about" title="About" />
+          <TextLink href="#experience" title="Experience" />
           <TextLink href="#projects" title="Projects" />
-          <TextLink
-            href="https://matthewmorales401.github.io/personal-website/matthew_morales_resume.pdf"
-            title="Resume"
-          />
-          <ButtonLink
-            href="https://github.com/matthewmorales401"
-            icon={faGithub}
-            color="black"
-          />
-          <ButtonLink
-            href="https://www.linkedin.com/in/matt-morales-6a7914173/"
-            icon={faLinkedin}
-            color="#0077b5"
-          />
-          <ButtonLink
-            href="mailto:matthewmoralestech@gmail.com"
-            icon={faEnvelope}
-            color="black"
-          />
+          <TextLink href="/matthew_morales_resume.pdf" title="Resume" />
+          <span {...stylex.props(styles.iconRow)}>
+            <IconLink
+              href="https://github.com/matthewmorales401"
+              icon={faGithub}
+              label="GitHub"
+            />
+            <IconLink
+              href="https://www.linkedin.com/in/matt-morales-6a7914173/"
+              icon={faLinkedin}
+              label="LinkedIn"
+            />
+            <IconLink
+              href="mailto:matthewmoralestech@gmail.com"
+              icon={faEnvelope}
+              label="Email"
+            />
+          </span>
         </div>
-      </nav>
+
+        <button
+          type="button"
+          {...stylex.props(styles.hamburger)}
+          onClick={() => setOpen((prev) => !prev)}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+        >
+          <FontAwesomeIcon icon={open ? faXmark : faBars} size="lg" />
+        </button>
+      </div>
+
+      {open && (
+        <div id="mobile-menu" {...stylex.props(styles.mobilePanel)}>
+          <TextLink href="#about" title="About" onClick={() => setOpen(false)} />
+          <TextLink
+            href="#experience"
+            title="Experience"
+            onClick={() => setOpen(false)}
+          />
+          <TextLink
+            href="#projects"
+            title="Projects"
+            onClick={() => setOpen(false)}
+          />
+          <TextLink
+            href="/matthew_morales_resume.pdf"
+            title="Resume"
+            onClick={() => setOpen(false)}
+          />
+          <div {...stylex.props(styles.mobileIcons)}>
+            <IconLink
+              href="https://github.com/matthewmorales401"
+              icon={faGithub}
+              label="GitHub"
+            />
+            <IconLink
+              href="https://www.linkedin.com/in/matt-morales-6a7914173/"
+              icon={faLinkedin}
+              label="LinkedIn"
+            />
+            <IconLink
+              href="mailto:matthewmoralestech@gmail.com"
+              icon={faEnvelope}
+              label="Email"
+            />
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

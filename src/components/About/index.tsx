@@ -1,74 +1,99 @@
 import * as stylex from "@stylexjs/stylex";
-import project_one from "../../images/golden-gate-bridge.png";
+import heroImage from "../../images/golden-gate-bridge.png";
 
 const styles = stylex.create({
-  aboutContainer: {
-    display: "flex",
-    justifyContent: "center",
-    paddingTop: "4em",
-    width: "100%",
-    flexDirection: {
-      "@media (max-width: 800px)": "column",
-    },
-
-    gap: {
-      "@media (max-width: 800px)": "90px",
-    },
-  },
-
-  linkContainer: {
-    display: "flex",
-    justifyContent: "flex-end",
-  },
-  boxContainer: {
-    backgroundColor: "white",
-    boxShadow:
-      "0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2)",
-    padding: "1.5em",
-
-    width: "90%",
-    boxSizing: "border-box",
+  section: {
+    maxWidth: "var(--max-width)",
     margin: "0 auto",
+    paddingLeft: "var(--space-page)",
+    paddingRight: "var(--space-page)",
+    paddingTop: "clamp(3rem, 8vw, 6rem)",
+    paddingBottom: "var(--space-section)",
   },
-
-  tagContainer: {
-    backgroundColor: "white",
+  hero: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: "3rem",
   },
-
-  imageContainer: {
-    height: "auto",
-    width: "90%",
+  intro: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "1.25rem",
+    maxWidth: "780px",
+  },
+  eyebrow: {
+    fontSize: "0.85rem",
+    fontWeight: 500,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    color: "var(--color-accent)",
+  },
+  heading: {
+    fontSize: "clamp(2.5rem, 7vw, 4.5rem)",
+    fontWeight: 600,
+    letterSpacing: "-0.035em",
+    lineHeight: 1.05,
+    color: "var(--color-text)",
+  },
+  tagline: {
+    fontSize: "clamp(1.1rem, 2vw, 1.35rem)",
+    color: "var(--color-text-muted)",
+    lineHeight: 1.55,
+    maxWidth: "640px",
+  },
+  body: {
+    color: "var(--color-text-muted)",
+    fontSize: "1.05rem",
+    lineHeight: 1.7,
+    maxWidth: "640px",
+  },
+  imageWrap: {
+    overflow: "hidden",
+    borderRadius: "16px",
+    border: "1px solid var(--color-border)",
+    aspectRatio: "16 / 9",
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
   },
 });
 
 export default function About() {
-  const descriptionOne =
-    "Hey there, I'm Matt! With a background in Computer Science from the University of California, Davis, I've delved into site reliability engineering and full-stack development at companies like Twitter and Uber.";
-  const descriptionTwo =
-    "Living in San Francisco, where creativity and tech meet, has been a dream. From building my first website to tackling coding challenges, my curiosity has only grown. I'm driven by excellence and a hunger for learning.";
-  const descriptionThree =
-    "As a recent graduate, I'm excited to contribute to impactful projects. Check out my Resume, GitHub, and LinkedIn on the top right for more information about me!";
-  const descriptionFour =
-    "Feel free to contact me if you  have any questions or want to learn more about me directly through my email, which you can also find on the top right!";
   return (
-    <div {...stylex.props(styles.aboutContainer)} id="about">
-      <div>
-        <img
-          {...stylex.props(styles.imageContainer)}
-          src={project_one}
-          height="500px"
-          width="1200px"
-        ></img>
-      </div>
-      <div>
-        <div {...stylex.props(styles.boxContainer)}>
-          <h3>About</h3>
-          <p> {descriptionOne} </p>
-          <p> {descriptionTwo} </p>
-          <p> {descriptionThree} </p>
-          <p> {descriptionFour} </p>
+    <section {...stylex.props(styles.section)} id="about">
+      <div {...stylex.props(styles.hero)}>
+        <div {...stylex.props(styles.intro)}>
+          <span {...stylex.props(styles.eyebrow)}>
+            Software Engineer · San Francisco
+          </span>
+          <h1 {...stylex.props(styles.heading)}>Hi, I'm Matt Morales.</h1>
+          <p {...stylex.props(styles.tagline)}>
+            I build reliable, well-designed software — from full-stack
+            applications to the systems that keep them running.
+          </p>
+          <p {...stylex.props(styles.body)}>
+            I studied Computer Science at UC Davis and have worked on site
+            reliability and full-stack engineering at Twitter and Uber. I'm
+            drawn to problems where careful engineering meets thoughtful
+            product design, and I'm always looking for the next thing to learn.
+          </p>
+          <p {...stylex.props(styles.body)}>
+            When I'm not coding, you'll find me exploring the city, working on
+            side projects, or chasing whatever new idea has caught my attention
+            this week.
+          </p>
+        </div>
+        <div {...stylex.props(styles.imageWrap)}>
+          <img
+            {...stylex.props(styles.image)}
+            src={heroImage}
+            alt="The Golden Gate Bridge in San Francisco at golden hour"
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
