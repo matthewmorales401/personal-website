@@ -1,7 +1,10 @@
 import * as stylex from "@stylexjs/stylex";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faUber } from "@fortawesome/free-brands-svg-icons";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faArrowUpRightFromSquare,
+  faBuilding,
+} from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 type Role = {
@@ -13,16 +16,16 @@ type Role = {
 
 const roles: Role[] = [
   {
+    company: "Mercury Insurance",
+    role: "Software Engineer",
+    href: "https://www.mercuryinsurance.com/",
+    icon: faBuilding,
+  },
+  {
     company: "Twitter",
     role: "Software Engineer Intern",
     href: "https://www.x.com/",
     icon: faTwitter,
-  },
-  {
-    company: "Uber",
-    role: "Career Prep Fellow — Software Engineering",
-    href: "https://www.uber.com/",
-    icon: faUber,
   },
 ];
 

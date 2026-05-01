@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/gg_icon.png" />
 
-    <title>Matt Morales — Software Engineer</title>
+    <title>Matt Morales | Software Engineer</title>
     <meta
       name="description"
-      content="Matt Morales is a software engineer based in San Francisco, focused on full-stack and site reliability work. Previously at Twitter and Uber."
+      content="Matt Morales is a full-stack software engineer based in San Francisco. Currently at Mercury Insurance, previously at Twitter."
     />
     <meta name="author" content="Matt Morales" />
     <meta name="theme-color" content="#FBFAF7" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mattmorales.xyz/" />
-    <meta property="og:title" content="Matt Morales — Software Engineer" />
+    <meta property="og:title" content="Matt Morales | Software Engineer" />
     <meta
       property="og:description"
-      content="Software engineer based in San Francisco. Full-stack and SRE work. Previously at Twitter and Uber."
+      content="Full-stack software engineer based in San Francisco. Currently at Mercury Insurance, previously at Twitter."
     />
     <meta property="og:image" content="https://mattmorales.xyz/gg_icon.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Matt Morales — Software Engineer" />
+    <meta name="twitter:title" content="Matt Morales | Software Engineer" />
     <meta
       name="twitter:description"
-      content="Software engineer based in San Francisco. Full-stack and SRE work. Previously at Twitter and Uber."
+      content="Full-stack software engineer based in San Francisco. Currently at Mercury Insurance, previously at Twitter."
     />
     <meta name="twitter:image" content="https://mattmorales.xyz/gg_icon.png" />
 
@@ -34,6 +34,21 @@
 
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <script>
+      // Prevent flash of wrong theme: read preference before paint.
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = saved || (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          // localStorage may be unavailable (private mode, etc.) — fall back to light.
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -18,7 +18,7 @@ export const projects: Project[] = [
     description:
       "An interactive visualization that lets users guess UC Davis administration expenditures and compare against the real numbers. Built with React + D3 dynamic pie charts.",
     image: slicePie,
-    imageAlt: "Slice the Pie — interactive D3 pie chart of UC Davis spending",
+    imageAlt: "Slice the Pie: interactive D3 pie chart of UC Davis spending",
     links: [
       { label: "GitHub", href: "https://github.com/matthewmorales401/Slice-the-Pie" },
     ],
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     description:
       "A full-stack workout tracker that lets users log past sessions and plan future ones. Server-rendered with a MySQL backend.",
     image: fitnessLog,
-    imageAlt: "Fitness Log — workout tracking dashboard",
+    imageAlt: "Fitness Log: workout tracking dashboard",
     links: [
       { label: "GitHub", href: "https://github.com/matthewmorales401/fitness-log" },
     ],
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     description:
       "A linear regression model that predicts violent crimes per 100K given socioeconomic inputs (family, wealth, race), wrapped in a React UI for interactive exploration. Built as a group ML capstone.",
     image: mlProject,
-    imageAlt: "Communities and Crimes ML project — prediction dashboard",
+    imageAlt: "Communities and Crimes ML project: prediction dashboard",
     links: [
       { label: "GitHub", href: "https://github.com/vedantapte/ECS-171-Group-Project" },
     ],

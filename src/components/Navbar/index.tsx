@@ -1,6 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 import TextLink from "../TextLink";
 import IconLink from "../IconLink";
+import ThemeToggle from "../ThemeToggle";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -12,7 +13,7 @@ const styles = stylex.create({
     position: "sticky",
     top: 0,
     zIndex: 10,
-    backgroundColor: "rgba(251, 250, 247, 0.85)",
+    backgroundColor: "var(--color-nav-bg)",
     backdropFilter: "saturate(160%) blur(12px)",
     WebkitBackdropFilter: "saturate(160%) blur(12px)",
     borderBottom: "1px solid var(--color-border)",
@@ -94,7 +95,7 @@ export default function Navbar() {
         <a
           href="#about"
           {...stylex.props(styles.brand)}
-          aria-label="Matt Morales — home"
+          aria-label="Matt Morales, home"
         >
           Matt Morales
         </a>
@@ -120,6 +121,7 @@ export default function Navbar() {
               icon={faEnvelope}
               label="Email"
             />
+            <ThemeToggle />
           </span>
         </div>
 
@@ -169,6 +171,7 @@ export default function Navbar() {
               icon={faEnvelope}
               label="Email"
             />
+            <ThemeToggle />
           </div>
         </div>
       )}

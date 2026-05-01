@@ -71,14 +71,14 @@ export default function About() {
           </span>
           <h1 {...stylex.props(styles.heading)}>Hi, I'm Matt Morales.</h1>
           <p {...stylex.props(styles.tagline)}>
-            I build reliable, well-designed software — from full-stack
-            applications to the systems that keep them running.
+            I build well-designed, full-stack software that's a pleasure to
+            use and a pleasure to maintain.
           </p>
           <p {...stylex.props(styles.body)}>
-            I studied Computer Science at UC Davis and have worked on site
-            reliability and full-stack engineering at Twitter and Uber. I'm
-            drawn to problems where careful engineering meets thoughtful
-            product design, and I'm always looking for the next thing to learn.
+            I studied Computer Science at UC Davis and have worked on
+            full-stack engineering at Mercury Insurance and Twitter. I'm drawn
+            to problems where careful engineering meets thoughtful product
+            design, and I'm always looking for the next thing to learn.
           </p>
           <p {...stylex.props(styles.body)}>
             When I'm not coding, you'll find me exploring the city, working on

@@ -100,7 +100,7 @@ export default function Contact() {
         <span {...stylex.props(styles.eyebrow)}>Get in touch</span>
         <h2 {...stylex.props(styles.heading)}>Let's build something.</h2>
         <p {...stylex.props(styles.body)}>
-          I'm always open to interesting conversations — whether it's a project
+          I'm always open to interesting conversations, whether it's a project
           you're working on, a role you think I'd be a fit for, or just to say
           hi.
         </p>
