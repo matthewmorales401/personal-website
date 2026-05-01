@@ -1,31 +1,41 @@
 import * as stylex from "@stylexjs/stylex";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const styles = stylex.create({
-  iconContainer: {
-    display: "flex",
-    backgroundColor: {
-      ":hover": "#B2B2B2",
-    },
-    justifyContent: "center",
+  link: {
+    display: "inline-flex",
     alignItems: "center",
-    textDecoration: "inherit",
-    padding: "2em",
-    fontWeight: "500",
+    justifyContent: "center",
+    width: "2.25rem",
+    height: "2.25rem",
+    color: "var(--color-text-muted)",
+    borderRadius: "8px",
+    transition: "color 150ms ease, background-color 150ms ease",
+    ":hover": {
+      color: "var(--color-accent)",
+      backgroundColor: "var(--color-accent-soft)",
+    },
   },
 });
 
-type IconLinkProps = {
+type Props = {
   href: string;
   icon: IconDefinition;
-  color: string;
+  label: string;
 };
 
-export default function IconLink({ href, icon, color }: IconLinkProps) {
+export default function IconLink({ href, icon, label }: Props) {
+  const isExternal = href.startsWith("http");
   return (
-    <a {...stylex.props(styles.iconContainer)} href={href}>
-      <FontAwesomeIcon icon={icon} size="2x" color={color} />
+    <a
+      href={href}
+      aria-label={label}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      {...stylex.props(styles.link)}
+    >
+      <FontAwesomeIcon icon={icon} size="lg" />
     </a>
   );
 }

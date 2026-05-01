@@ -1,61 +1,58 @@
 import * as stylex from "@stylexjs/stylex";
-import ProjectML from "./ProjectML";
-import ProjectFitness from "./ProjectFitness";
-import project_two from "../../images/fitness-log.png";
-import project_one from "../../images/slice-the-pie.png";
-import project_three from "../../images/machine-learning-project.png";
-import ProjectSlice from "./ProjectSlice";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import ProjectCard from "./ProjectCard";
+import { projects } from "../../data/projects";
 
 const styles = stylex.create({
-  navContainer: {
-    display: "flex",
-    width: "300px",
-    backgroundColor: "#rgba(255, 255, 255, 0.87)",
-    alignItems: "center",
+  section: {
+    maxWidth: "var(--max-width)",
+    margin: "0 auto",
+    paddingLeft: "var(--space-page)",
+    paddingRight: "var(--space-page)",
+    paddingTop: "var(--space-section)",
+    paddingBottom: "var(--space-section)",
   },
   header: {
-    marginBottom: "190px",
-    fontWeight: "lighter",
-    fontSize: "3.2em",
+    display: "flex",
+    alignItems: "baseline",
+    gap: "1rem",
+    marginBottom: "3rem",
+    flexDirection: {
+      default: "row",
+      "@media (max-width: 700px)": "column",
+    },
   },
-
-  wholeContainer: {
-    paddingTop: "3em",
-    paddingBottom: "10em",
+  eyebrow: {
+    fontSize: "0.85rem",
+    fontWeight: 500,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    color: "var(--color-accent)",
+  },
+  title: {
+    fontSize: "clamp(2rem, 5vw, 3rem)",
+    fontWeight: 600,
+    letterSpacing: "-0.03em",
+    color: "var(--color-text)",
+  },
+  list: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "2rem",
   },
 });
 
 export default function Projects() {
   return (
-    <div {...stylex.props(styles.wholeContainer)} id="projects">
-      <div>
-        <h1 {...stylex.props(styles.header)}>Projects</h1>
+    <section {...stylex.props(styles.section)} id="projects">
+      <header {...stylex.props(styles.header)}>
+        <span {...stylex.props(styles.eyebrow)}>Selected Work</span>
+        <h2 {...stylex.props(styles.title)}>Projects</h2>
+      </header>
+      <div {...stylex.props(styles.list)}>
+        {projects.map((p, i) => (
+          <ProjectCard key={p.title} project={p} reverse={i % 2 === 1} />
+        ))}
       </div>
-      <ProjectSlice
-        {...stylex.props(styles.navContainer)}
-        src={project_one}
-        height="600px"
-        width="300px"
-        icon={faGithub}
-        href="https://github.com/matthewmorales401/Slice-the-Pie"
-      ></ProjectSlice>
-      <ProjectFitness
-        {...stylex.props(styles.navContainer)}
-        src={project_two}
-        height="1000px"
-        width="1000px"
-        icon={faGithub}
-        href="https://github.com/matthewmorales401/fitness-log"
-      ></ProjectFitness>
-      <ProjectML
-        src={project_three}
-        description="Cooler!"
-        height="600px"
-        width="700px"
-        icon={faGithub}
-        href="https://github.com/vedantapte/ECS-171-Group-Project"
-      ></ProjectML>
-    </div>
+    </section>
   );
 }

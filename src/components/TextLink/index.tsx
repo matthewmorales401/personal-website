@@ -1,28 +1,33 @@
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  textLinkContainer: {
-    display: "flex",
-    backgroundColor: {
-      ":hover": "#B2B2B2",
+  link: {
+    fontSize: "0.95rem",
+    fontWeight: 500,
+    color: "var(--color-text-muted)",
+    transition: "color 150ms ease",
+    ":hover": {
+      color: "var(--color-accent)",
     },
-    color: "#797270",
-    justifyContent: "center",
-    alignItems: "center",
-    textDecoration: "inherit",
-    padding: "2em",
-    fontWeight: "500",
   },
 });
 
-type TextLinkProps = {
+type Props = {
   href: string;
   title: string;
+  onClick?: () => void;
 };
 
-export default function TextLink({ href, title }: TextLinkProps) {
+export default function TextLink({ href, title, onClick }: Props) {
+  const isExternal = href.startsWith("http");
   return (
-    <a {...stylex.props(styles.textLinkContainer)} href={href}>
+    <a
+      href={href}
+      onClick={onClick}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      {...stylex.props(styles.link)}
+    >
       {title}
     </a>
   );
